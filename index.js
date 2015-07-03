@@ -30,6 +30,14 @@ ReplicatorCommon.prototype.replicate = function() {
   console.log('not implemented');
 };
 
+ReplicatorCommon.prototype.removePeer = function(id) {
+  var idx = this.peers.indexOf(id);
+  if (idx >= 0) {
+    this.peers.splice(idx, 1);
+    this.streams.splice(idx, 1);
+  }
+};
+
 // common methods
 ReplicatorCommon.prototype.join = function(minPeers) {
   minPeers = typeof minPeers !== 'undefined' ? minPeers : 0;

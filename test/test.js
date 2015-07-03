@@ -33,4 +33,10 @@ describe('replicate-common node module', function () {
     var peers = replicator1.getPeers();
     assert.equal(peers.length, 2);
   });
+  
+  it('should remove peers', function() {
+    var peers = replicator1.getPeers();
+    replicator1.removePeer(peers[0]);
+    assert.equal(peers.length, 1);
+  });
 });
