@@ -1,0 +1,31 @@
+{
+  "name": "replicate-common",
+  "description": "Base implementation for services to replicate over WebRTC DataChannels",
+  "homepage": "https://github.com/scottmtp/replicate-common",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scottmtp/replicate-common.git"
+  },
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": [
+    "localstorage-replicate-webrtc",
+    "webrtc",
+    "localStorage"
+  ],
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "dependencies": {
+    "promise": "^7.0.1",
+    "rtc-quickconnect": "4.3.1",
+    "rtcstream": "scottmtp/rtcstream",
+    "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "cuid": "1.2.5",
+    "mocha": "^2.2.5",
+    "rtc-plugin-node": "^2.2.0"
+  }
+}
