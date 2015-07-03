@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git://github.com/scottmtp/replicate-common.git"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "test": "mocha --reporter spec"
