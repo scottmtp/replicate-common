@@ -8,11 +8,6 @@
   },
   "version": "0.0.1",
   "license": "MIT",
-  "keywords": [
-    "localstorage-replicate-webrtc",
-    "webrtc",
-    "localStorage"
-  ],
   "scripts": {
     "test": "mocha --reporter spec"
   },
