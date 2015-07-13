@@ -15,8 +15,7 @@
   "dependencies": {
     "promise": "^7.0.1",
     "rtc-quickconnect": "4.3.1",
-    "rtcstream": "0.0.2",
-    "debug": "^2.2.0"
+    "rtcstream": "0.0.2"
   },
   "devDependencies": {
     "chai": "^3.0.0",
