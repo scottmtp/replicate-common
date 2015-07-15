@@ -13,14 +13,11 @@
     "coverage": "istanbul cover _mocha -- test/ -R spec"
   },
   "dependencies": {
-    "promise": "^7.0.1",
-    "rtc-quickconnect": "4.3.1",
-    "rtcstream": "0.0.2"
+    "promise": "^7.0.1"
   },
   "devDependencies": {
     "chai": "^3.0.0",
     "cuid": "1.2.5",
-    "mocha": "^2.2.5",
-    "rtc-plugin-node": "^2.2.0"
+    "mocha": "^2.2.5"
   }
 }

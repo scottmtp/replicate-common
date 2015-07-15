@@ -7,10 +7,8 @@ var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 var quickconnect = require('rtc-quickconnect');
 
-var ReplicatorCommon = function(name, signalUrl, rtcOptions) {
+var ReplicatorCommon = function(name) {
   this.name = name;
-  this.signalUrl = signalUrl;
-  this.rtcOptions = rtcOptions;
 
   this.streams = [];
   this.peers = [];
@@ -40,27 +38,6 @@ ReplicatorCommon.prototype.removePeer = function(id) {
 };
 
 // common methods
-ReplicatorCommon.prototype.join = function(minPeers) {
-  minPeers = typeof minPeers !== 'undefined' ? minPeers : 0;
-  var self = this;
-
-  var p = new Promise(function(resolve, reject) {
-    self.signaller = quickconnect(self.signalUrl, self.rtcOptions);
-    self.signaller.createDataChannel(self.rtcOptions.room)
-      .on('channel:opened:' + self.rtcOptions.room, function(id, dc) {
-        self.addPeer(id, dc);
-        if (self.peers.length >= minPeers) {
-          resolve();
-        }
-      })
-      .on('channel:closed:' + self.rtcOptions.room, function(id, dc) {
-        self.removePeer(id);
-      });
-  });
-
-  return p;
-};
-
 ReplicatorCommon.prototype.addPeer = function(id, dc) {
   var self = this;
 
@@ -70,10 +47,6 @@ ReplicatorCommon.prototype.addPeer = function(id, dc) {
 
   stream.on('data', this.receiveData.bind(this));
 
-};
-
-ReplicatorCommon.prototype.close = function() {
-  this.signaller.close();
 };
 
 ReplicatorCommon.prototype.getPeers = function() {
