@@ -13,7 +13,8 @@
     "coverage": "istanbul cover _mocha -- test/ -R spec"
   },
   "dependencies": {
-    "promise": "^7.0.1"
+    "promise": "^7.0.1",
+    "rtcstream": "0.0.2"
   },
   "devDependencies": {
     "chai": "^3.0.0",

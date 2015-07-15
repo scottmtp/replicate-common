@@ -5,7 +5,6 @@ var RtcDataStream = require('rtcstream');
 var Promise = require('promise');
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
-var quickconnect = require('rtc-quickconnect');
 
 var ReplicatorCommon = function(name) {
   this.name = name;
